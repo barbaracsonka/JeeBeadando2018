@@ -7,6 +7,7 @@
   <modules>
   	<module>word-web</module>
   	<module>word-ear</module>
+  	<module>word-ejbservice</module>
   </modules>
   
   	<properties>
