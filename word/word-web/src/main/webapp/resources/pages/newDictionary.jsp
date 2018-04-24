@@ -4,14 +4,14 @@
 <%@ include file = "header.jsp" %>
 
 		<div class='container'>
-			<form action="/newbook" method="post">
+			<form action="/newdictionary" method="post">
 			  <div class="form-group">
 			    <label for="name">Name:</label>
 			    <input type="text" class="form-control" id="name">
 			  </div>
 			  <div class="form-group">
-			    <label for="isbn">ISBN:</label>
-			    <input type="text" class="form-control" id="isbn">
+			    <label for="type">Type:</label>
+			    <input type="text" class="form-control" id="type">
 			  </div>
 			  <button type="submit" class="btn btn-default">Submit</button>
 			</form>

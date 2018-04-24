@@ -8,15 +8,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/newbook")
-public class NewBookServlet extends HttpServlet {
+@WebServlet("/newdictionary")
+public class NewDictionaryServlet extends HttpServlet {
 
 	private static final long serialVersionUID = -3632126370557330813L;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.setCharacterEncoding("UTF-8");
-		getServletContext().getRequestDispatcher("/resources/pages/newBook.jsp").forward(req,resp);
+		getServletContext().getRequestDispatcher("/resources/pages/newDictionary.jsp").forward(req,resp);
 	}
 	
 	@Override

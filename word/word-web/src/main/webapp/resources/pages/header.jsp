@@ -10,17 +10,11 @@
 	<script type="text/javascript" src="resources/js/index.js"></script>
 	<link rel="stylesheet" type="text/css" href="resources/datatables/DataTables-1.10.16/css/jquery.dataTables.min.css"/>
 	<link rel="stylesheet" type="text/css" href="resources/bootstrap/css/bootstrap.min.css"/>
-	<title>Word</title>
-	
-	<script>
-	$(document).ready(function() {
-	    $('#bookTable').DataTable();
-	});
-	</script>
+	<title>Dictionaries</title>
 </head>
 <body>
 	<div class='container' style='margin-bottom:2rem;'>
 		<nav class="navbar navbar-dark bg-dark">
-			<a class="navbar-brand" href="#">Word</a>
+			<a class="navbar-brand" href="/index">Word</a>
 		</nav>
 	</div>
