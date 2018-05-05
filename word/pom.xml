@@ -8,6 +8,7 @@
   	<module>word-web</module>
   	<module>word-ear</module>
   	<module>word-ejbservice</module>
+  	<module>word-persistence</module>
   </modules>
   
   	<properties>
