@@ -22,7 +22,7 @@ public class DictionaryServiceImpl implements DictionaryService {
 
 	@Override
 	public List<Dictionary> getAllDictionray() {
-		return null;
+		return entityManager.createNamedQuery(Dictionary.GET_ALL,Dictionary.class).getResultList();
 	}
 
 	@Override

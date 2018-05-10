@@ -5,6 +5,8 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
+import hu.oe.word.ejbservice.converter.DictionaryConverter;
+import hu.oe.word.ejbservice.stub.DictionaryStub;
 import hu.oe.word.persistence.entity.Dictionary;
 import hu.oe.word.persistence.service.DictionaryService;
 
@@ -14,11 +16,14 @@ public class DictionariesFacadeImpl implements DictionariesFacade {
 	@EJB
 	private DictionaryService dictionaryService;
 	
+	@EJB 
+	private DictionaryConverter dictionaryConverter;
+	
 	
 	@Override
-	public List<Dictionary> getAllDictionray() {
-		//TODO
-		return null;
+	public List<DictionaryStub> getAllDictionray() {
+		List<Dictionary> list = dictionaryService.getAllDictionray();
+		return dictionaryConverter.to(list);
 	}
 
 	@Override

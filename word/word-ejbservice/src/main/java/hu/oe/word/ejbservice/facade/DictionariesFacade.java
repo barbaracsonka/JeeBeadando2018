@@ -4,12 +4,12 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import hu.oe.word.persistence.entity.Dictionary;
+import hu.oe.word.ejbservice.stub.DictionaryStub;
 
 @Local
 public interface DictionariesFacade {
 
-	List<Dictionary> getAllDictionray();
+	List<DictionaryStub> getAllDictionray();
 	
 	void saveNewDictionary(String name, String type);
 }

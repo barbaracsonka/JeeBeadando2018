@@ -22,6 +22,7 @@ public class NewDictionaryServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.setCharacterEncoding("UTF-8");
+		
 		getServletContext().getRequestDispatcher("/resources/pages/newDictionary.jsp").forward(req,resp);
 	}
 	
@@ -30,6 +31,6 @@ public class NewDictionaryServlet extends HttpServlet {
 		resp.setCharacterEncoding("UTF-8");
 		dictionariesFacade.saveNewDictionary(req.getParameter("name"), req.getParameter("type"));
 		
-		getServletContext().getRequestDispatcher("/resources/pages/index.jsp").forward(req,resp);
+		resp.sendRedirect("index");
 	}
 }
