@@ -29,7 +29,10 @@
 					    <td>${element.id}</td>
 					    <td>${element.type}</td>
 					    <td>${element.name}</td>
-						<td><button type='button' class=' btn btn-success'>Open</button> <button type='button' class='btn btn-danger'>Delete</button></td>
+						<td>
+							<button type='button' class=' btn btn-success'>Open</button> 
+							<a href='deleteDictionary?id=${element.id}'><button name='id' value='${element.id}' type='button' class='btn btn-danger'>Delete</button></a>
+						</td>
 					  </tr>
 					</c:forEach>
 				</tbody>

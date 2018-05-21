@@ -31,4 +31,9 @@ public class DictionariesFacadeImpl implements DictionariesFacade {
 		dictionaryService.saveNewDictionary(name, type);
 	}
 
+	@Override
+	public void removeDictionary(Long id) {
+		dictionaryService.removeDictionary(id);
+	}
+
 }

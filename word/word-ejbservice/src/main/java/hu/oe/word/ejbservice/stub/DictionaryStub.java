@@ -1,8 +1,5 @@
 package hu.oe.word.ejbservice.stub;
 
-import javax.persistence.Column;
-
-
 public class DictionaryStub {
 	
 	private Long id;
@@ -18,12 +15,8 @@ public class DictionaryStub {
 		this.type = type;
 	}
 
-	
-	
-	@Column(name="name")
 	private String name;
 	
-	@Column(name="type")
 	private String type;
 
 	public Long getId() {

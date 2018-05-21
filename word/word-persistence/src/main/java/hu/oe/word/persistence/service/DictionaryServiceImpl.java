@@ -29,6 +29,11 @@ public class DictionaryServiceImpl implements DictionaryService {
 	public void saveNewDictionary(String name, String type) {
 		entityManager.persist(new Dictionary(name, type));
 	}
+
+	@Override
+	public void removeDictionary(Long id) {
+		entityManager.createNamedQuery(Dictionary.DELETE_ONE).setParameter("id", id).executeUpdate();
+	}
 	
 	
 }

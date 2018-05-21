@@ -11,5 +11,6 @@ public interface DictionaryService {
 
 	List<Dictionary> getAllDictionray();
 	void saveNewDictionary(String name, String type);
+	void removeDictionary(Long id);
 	
 }

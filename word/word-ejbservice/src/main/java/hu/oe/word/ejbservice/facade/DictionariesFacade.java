@@ -12,4 +12,6 @@ public interface DictionariesFacade {
 	List<DictionaryStub> getAllDictionray();
 	
 	void saveNewDictionary(String name, String type);
+	
+	void removeDictionary(Long id);
 }

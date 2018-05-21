@@ -13,12 +13,13 @@ import javax.persistence.Table;
 @Entity
 @Table(name="dictionary")
 @NamedQueries( value = {
-	@NamedQuery(name = Dictionary.GET_ALL,query = "SELECT b FROM Dictionary b order by b.name")
-	
+	@NamedQuery(name = Dictionary.GET_ALL,query = "SELECT b FROM Dictionary b order by b.name"),
+	@NamedQuery(name = Dictionary.DELETE_ONE,query = "DELETE FROM Dictionary b WHERE b.id = :id")
 })
 public class Dictionary {
 	
 	public static final String GET_ALL = "Dictionary.getAll";
+	public static final String DELETE_ONE = "Dictionary.delete";
 	
 	@Id
 	@SequenceGenerator(name="generatorDictionary", sequenceName="dictionary_id_seq",allocationSize=1)
