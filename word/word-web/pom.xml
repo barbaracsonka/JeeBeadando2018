@@ -25,6 +25,7 @@
   		<groupId>hu.oe</groupId>
   		<artifactId>word-ejbservice</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
+  		<scope>provided</scope>
   	</dependency>
   </dependencies>
   

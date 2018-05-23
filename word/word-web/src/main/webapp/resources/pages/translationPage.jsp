@@ -8,37 +8,36 @@
 
 	<script>
 		$(document).ready(function() {
-		    $('#dictionaryTable').DataTable();
+		    $('#translationTable').DataTable();
 		});
 	</script>
 		<div class='container' style='padding:1rem;'>
-			<h3>Dictionaries:</h3>
+			<h3>Translations:</h3>
 			
-			<table id="dictionaryTable" class='display' style="width:100%;margin-bottom:1rem;">
+			<table id="translationTable" class='display' style="width:100%;margin-bottom:1rem;">
 				<thead>
 					<tr>
 						<th>Id</th>
-						<th>Name</th>
-						<th>Type</th>
+						<th>From</th>
+						<th>To</th>
 						<th>Functions</th>
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach items="${Dictionaries}" var="element"> 
+					<c:forEach items="${translations}" var="element"> 
 					  <tr>
 					    <td>${element.id}</td>
-					    <td>${element.type}</td>
-					    <td>${element.name}</td>
+					    <td>${element.original}</td>
+					    <td>${element.translation}</td>
 						<td>
-							<a href='translationPage?dictionaryid=${element.id}'><button name='id' value='${element.id}' type='button' class='btn btn-success'>Open</button></a>
-							<a href='deleteDictionary?id=${element.id}'><button name='id' value='${element.id}' type='button' class='btn btn-danger'>Delete</button></a>
+							<a href='deletetranslation?id=${element.id}&dictionaryid=${dictionaryId}'><button name='id' value='${element.id}' type='button' class='btn btn-danger'>Delete</button></a>
 						</td>
 					  </tr>
 					</c:forEach>
 				</tbody>
 			</table>
 			<div class="row" style="margin-top:1rem">
-			     <div class="col text-right"><a href="newdictionary" class='btn btn-primary'>New dictionary</a></div>
+			     <div class="col text-right"><a href="newtranslation?dictionaryid=${dictionaryId}" class='btn btn-primary'>New word</a></div>
 			</div>
 			
 		</div>
