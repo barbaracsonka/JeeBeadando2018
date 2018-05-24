@@ -12,13 +12,14 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="translation")
-@NamedQueries( value = {
+@NamedQueries( value = {		
+		@NamedQuery(name = Translation.GET_TRANSLATION_BY_ID,query = "SELECT b FROM Translation b WHERE b.id = :id"),
 		@NamedQuery(name = Translation.GET_ALL_BY_DICTIONARY_ID,query = "SELECT b FROM Translation b WHERE b.dictionaryId = :dictionaryId order by b.original"),
 		@NamedQuery(name = Translation.DELETE_ONE,query = "DELETE FROM Translation b WHERE b.id = :id")
 	})
 public class Translation {
 	
-
+	public static final String GET_TRANSLATION_BY_ID = "Translation.getTranslationById";
 	public static final String GET_ALL_BY_DICTIONARY_ID = "Translation.getAllByDictionaryId";
 	public static final String DELETE_ONE = "Translation.delete";
 	

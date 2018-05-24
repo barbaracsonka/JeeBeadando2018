@@ -31,10 +31,21 @@ public class TranslationFacadeImpl implements TranslationFacade {
 	public void saveNewTranslation(Long dictionaryId, String from, String to) {
 		translationService.saveNewTranslation(dictionaryId, from, to);
 	}
+	
+	@Override
+	public void editTranslation(Long id, Long dictionaryId, String from, String to) {
+		translationService.editTranslation(id, dictionaryId, from, to);
+	}
 
 	@Override
 	public void removeTranslation(Long id) {
 		translationService.removeTranslation(id);
+	}
+
+	@Override
+	public TranslationStub getTranslationById(Long id) {
+		Translation t = translationService.getTranslationById(id);
+		return translationConverter.to(t);
 	}
 
 }

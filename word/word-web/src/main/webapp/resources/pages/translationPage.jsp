@@ -30,6 +30,7 @@
 					    <td>${element.original}</td>
 					    <td>${element.translation}</td>
 						<td>
+							<a href='edittranslation?id=${element.id}&dictionaryid=${dictionaryId}'><button name='id' value='${element.id}' type='button' class='btn btn-success'>Edit</button></a>
 							<a href='deletetranslation?id=${element.id}&dictionaryid=${dictionaryId}'><button name='id' value='${element.id}' type='button' class='btn btn-danger'>Delete</button></a>
 						</td>
 					  </tr>

@@ -12,4 +12,6 @@ public interface TranslationFacade {
 	List<TranslationStub> getAllTranslationByDictionaryId(Long DictionaryId);
 	void saveNewTranslation(Long dictionaryId, String from, String to);
 	void removeTranslation(Long id);
+	TranslationStub getTranslationById(Long id);
+	void editTranslation(Long id, Long dictionaryId, String from, String to);
 }

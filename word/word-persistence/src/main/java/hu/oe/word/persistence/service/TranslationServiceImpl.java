@@ -28,10 +28,25 @@ public class TranslationServiceImpl implements TranslationService {
 				.setParameter("dictionaryId", id)
 				.getResultList();
 	}
+	
+	@Override
+	public Translation getTranslationById(Long id) {
+		return entityManager
+				.createNamedQuery(Translation.GET_TRANSLATION_BY_ID,Translation.class)
+				.setParameter("id", id)
+				.getSingleResult();
+	}
 
 	@Override
 	public void saveNewTranslation(Long dictionaryId, String from,String to) {
 		entityManager.persist(new Translation(dictionaryId,from,to));
+	}
+	
+	@Override
+	public void editTranslation(Long id, Long dictionaryId, String from,String to) {
+		Translation t = entityManager.find(Translation.class, id);
+		t.setOriginal(from);
+		t.setTranslation(to);
 	}
 
 	@Override
