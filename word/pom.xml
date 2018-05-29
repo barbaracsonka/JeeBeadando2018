@@ -9,6 +9,7 @@
   	<module>word-ear</module>
   	<module>word-ejbservice</module>
   	<module>word-persistence</module>
+  	<module>word-rest</module>
   </modules>
   
   	<properties>
