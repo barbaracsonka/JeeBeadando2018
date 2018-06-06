@@ -6,6 +6,8 @@ import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
 import hu.oe.word.ejbservice.converter.TranslationConverter;
+import hu.oe.word.ejbservice.error.AdaptorException;
+import hu.oe.word.ejbservice.error.ApplicationError;
 import hu.oe.word.ejbservice.stub.TranslationStub;
 import hu.oe.word.persistence.entity.Translation;
 import hu.oe.word.persistence.service.TranslationService;
@@ -33,13 +35,21 @@ public class TranslationFacadeImpl implements TranslationFacade {
 	}
 	
 	@Override
-	public void editTranslation(Long id, Long dictionaryId, String from, String to) {
-		translationService.editTranslation(id, dictionaryId, from, to);
+	public void editTranslation(Long id, String from, String to) throws AdaptorException {
+		if (translationService.exists(id)) {
+			translationService.editTranslation(id, from, to);
+		} else {
+			throw new AdaptorException(ApplicationError.UNEXPECTED, id.toString(), "Translation not found!");
+		}
 	}
 
 	@Override
-	public void removeTranslation(Long id) {
-		translationService.removeTranslation(id);
+	public void removeTranslation(Long id) throws AdaptorException {
+		if (translationService.exists(id)) {
+			translationService.removeTranslation(id);
+		} else {
+			throw new AdaptorException(ApplicationError.UNEXPECTED, id.toString(), "Translation not found!");
+		}
 	}
 
 	@Override

@@ -10,7 +10,6 @@ import javax.ejb.TransactionManagementType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import hu.oe.word.persistence.entity.Dictionary;
 import hu.oe.word.persistence.entity.Translation;
 
 @Stateless(mappedName="ejb/TranslationService")
@@ -43,14 +42,19 @@ public class TranslationServiceImpl implements TranslationService {
 	}
 	
 	@Override
-	public void editTranslation(Long id, Long dictionaryId, String from,String to) {
+	public void editTranslation(Long id, String from,String to) {
 		Translation t = entityManager.find(Translation.class, id);
 		t.setOriginal(from);
 		t.setTranslation(to);
 	}
+	
+	@Override
+	public boolean exists(Long id) {
+		return entityManager.find(Translation.class, id) != null;
+	}
 
 	@Override
-	public void removeTranslation(Long id) {
-		entityManager.createNamedQuery(Translation.DELETE_ONE).setParameter("id", id).executeUpdate();
+	public int removeTranslation(Long id) {
+		return entityManager.createNamedQuery(Translation.DELETE_ONE).setParameter("id", id).executeUpdate();
 	}
 }

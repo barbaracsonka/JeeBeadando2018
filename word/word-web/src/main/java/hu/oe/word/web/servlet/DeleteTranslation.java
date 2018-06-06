@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import hu.oe.word.ejbservice.error.AdaptorException;
 import hu.oe.word.ejbservice.facade.TranslationFacade;
 
 @WebServlet("/deletetranslation")
@@ -23,7 +24,11 @@ public class DeleteTranslation extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String id = req.getParameter("id");
 		if (id!=null) {
-			translationFacade.removeTranslation(Long.valueOf(id));
+			try {
+				translationFacade.removeTranslation(Long.valueOf(id));
+			} catch (AdaptorException e) {
+				e.printStackTrace();
+			}
 		}
 		
 		resp.sendRedirect("translationPage?dictionaryid="+req.getParameter("dictionaryid"));

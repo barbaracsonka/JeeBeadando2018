@@ -12,8 +12,9 @@ public interface TranslationService {
 
 	List<Translation> getAllTranslationByDictionaryId(Long id);
 	void saveNewTranslation(Long dictionaryId, String from,String to);
-	void editTranslation(Long id, Long dictionaryId, String from,String to);
-	void removeTranslation(Long id);
+	void editTranslation(Long id, String from,String to);
+	int removeTranslation(Long id);
 	Translation getTranslationById(Long id);
+	boolean exists(Long id);
 	
 }

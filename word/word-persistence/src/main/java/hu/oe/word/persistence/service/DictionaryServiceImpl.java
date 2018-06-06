@@ -35,5 +35,10 @@ public class DictionaryServiceImpl implements DictionaryService {
 		entityManager.createNamedQuery(Dictionary.DELETE_ONE).setParameter("id", id).executeUpdate();
 	}
 	
+	@Override
+	public boolean exists(Long id) {
+		return entityManager.find(Dictionary.class, id) != null;
+	}
+	
 	
 }

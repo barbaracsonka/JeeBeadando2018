@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import hu.oe.word.ejbservice.error.AdaptorException;
 import hu.oe.word.ejbservice.facade.DictionariesFacade;
 
 @WebServlet("/deleteDictionary")
@@ -23,7 +24,12 @@ public class DeleteDictionary extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String id = req.getParameter("id");
 		if (id!=null) {
-			dictionariesFacade.removeDictionary(Long.valueOf(id));
+			try {
+				dictionariesFacade.removeDictionary(Long.valueOf(id));
+			}
+				catch (AdaptorException e) {
+				e.printStackTrace();
+			}
 		}
 		
 		resp.sendRedirect("index");
