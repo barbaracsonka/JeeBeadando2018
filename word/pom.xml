@@ -10,6 +10,7 @@
   	<module>word-ejbservice</module>
   	<module>word-persistence</module>
   	<module>word-rest</module>
+  	<module>word-ws</module>
   </modules>
   
   	<properties>

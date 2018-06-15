@@ -24,6 +24,12 @@
   	</dependency>
   	<dependency>
   		<groupId>hu.oe</groupId>
+  		<artifactId>word-ws</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  		<type>war</type>
+  	</dependency>
+  	<dependency>
+  		<groupId>hu.oe</groupId>
   		<artifactId>word-ejbservice</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
   		<type>ejb</type>
@@ -51,6 +57,11 @@
   						<groupId>hu.oe</groupId>
   						<artifactId>word-web</artifactId>
   						<contextRoot>/web</contextRoot>
+  					</webModule>
+  					<webModule>
+  						<groupId>hu.oe</groupId>
+  						<artifactId>word-ws</artifactId>
+  						<contextRoot>/ws</contextRoot>
   					</webModule>
   					<webModule>
   						<groupId>hu.oe</groupId>
