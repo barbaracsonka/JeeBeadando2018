@@ -1,5 +1,12 @@
 package hu.oe.word.ejbservice.stub;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name="Dictionary")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class TranslationStub {
 	
 
@@ -24,13 +31,17 @@ public class TranslationStub {
 	public TranslationStub() {
 		super();
 	}
-
+	
+	@XmlAttribute(name = "id")
 	private Long id;
 	
+	@XmlAttribute(name = "dictionaryId")
 	private Long dictionaryId;
 	
+	@XmlAttribute(name = "original")
 	private String original;
-	
+
+	@XmlAttribute(name = "translation")
 	private String translation;
 
 	public Long getId() {
