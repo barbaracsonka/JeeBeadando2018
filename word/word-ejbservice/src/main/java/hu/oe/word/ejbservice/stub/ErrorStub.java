@@ -1,7 +1,18 @@
 package hu.oe.word.ejbservice.stub;
 
-public class ErrorStub {
+import java.io.Serializable;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name="ServiceError")
+public class ErrorStub implements Serializable{
+
+	public ErrorStub() {
+		this(10, null, null);
+	}
+	private static final long serialVersionUID = 2751598970173721446L;
+	
 	private int code;
 	private String message;
 	private String field;
@@ -13,12 +24,15 @@ public class ErrorStub {
 		this.field = field;
 	}
 	
+	@XmlElement(name="code")
 	public int getCode() {
 		return code;
 	}
 	public void setCode(int code) {
 		this.code = code;
 	}
+	
+	@XmlElement(name="message")
 	public String getMessage() {
 		return message;
 	}

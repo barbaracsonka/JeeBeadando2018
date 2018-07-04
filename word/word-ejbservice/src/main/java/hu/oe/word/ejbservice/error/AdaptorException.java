@@ -1,9 +1,11 @@
 package hu.oe.word.ejbservice.error;
 
 import javax.ws.rs.core.Response.Status;
+import javax.xml.ws.WebFault;
 
 import hu.oe.word.ejbservice.stub.ErrorStub;
 
+@WebFault(targetNamespace="http://www.word.hu/Word", name = "WordFault" )
 public class AdaptorException extends Exception {
 
 	private final ApplicationError error;
@@ -22,4 +24,8 @@ public class AdaptorException extends Exception {
 	public Status getHttpStatus(){
 		return error.getHttpStatus();
 	}
+	
+	public ErrorStub getFaultInfo(){
+		return this.error.build(field);
+	} 
 }
