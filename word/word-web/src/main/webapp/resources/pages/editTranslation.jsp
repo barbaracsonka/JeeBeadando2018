@@ -4,7 +4,7 @@
 <%@ include file = "header.jsp" %>
 
 		<div class='container'>
-			<form action="/edittranslation" method="post">
+			<form action="edittranslation" method="post">
 			  <input type="hidden" class="form-control" name="dictionaryid" id="dictionaryid" value="${dictionaryid}">
 			  <input type="hidden" class="form-control" name="id" id="id" value="${id}">
 			  <div class="form-group">

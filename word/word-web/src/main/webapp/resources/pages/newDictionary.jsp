@@ -4,7 +4,7 @@
 <%@ include file = "header.jsp" %>
 
 		<div class='container'>
-			<form action="/newdictionary" method="post">
+			<form action="newdictionary" method="post">
 			  <div class="form-group">
 			    <label for="name">Name:</label>
 			    <input type="text" class="form-control" name="name" id="name">
